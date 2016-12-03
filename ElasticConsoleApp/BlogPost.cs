@@ -10,7 +10,11 @@ namespace ElasticConsoleApp
     [ElasticsearchType(IdProperty = "Id", Name = "blog_post")]
     public class BlogPost
     {
+<<<<<<< HEAD
         [String]
+=======
+        
+>>>>>>> fbfac17c95ce30d510f5ebc477d435af553433b6
         public Guid? Id { get; set; }
 
         [String]

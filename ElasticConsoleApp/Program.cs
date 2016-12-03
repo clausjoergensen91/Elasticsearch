@@ -16,7 +16,7 @@ namespace ElasticConsoleApp
             var client = new ElasticClient(settings);
 
             //Creates an index in Elasticsearch
-            var createIndexResponse = client.CreateIndex("index-claus", c => c
+            var createIndexResponse = client.CreateIndex("index-peter", c => c
                     .Settings(s => s
                         .NumberOfShards(5)
                         .NumberOfReplicas(1)
@@ -45,9 +45,14 @@ namespace ElasticConsoleApp
 
             //Indexes the blogpost in the index
             var res = client.Index(blogPost, p => p
+<<<<<<< HEAD
                 .Index("index-claus")
                 .Type("blogpost")
                 .Id(1)
+=======
+                .Index("index-peter")
+                .Id(blogPost.Id.ToString())
+>>>>>>> fbfac17c95ce30d510f5ebc477d435af553433b6
                 .Refresh());
 
             Console.WriteLine(res.CallDetails);
