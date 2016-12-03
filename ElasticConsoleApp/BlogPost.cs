@@ -11,10 +11,14 @@ namespace ElasticConsoleApp
     public class BlogPost
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         [String]
 =======
         
 >>>>>>> fbfac17c95ce30d510f5ebc477d435af553433b6
+=======
+        [String]
+>>>>>>> origin/master
         public Guid? Id { get; set; }
 
         [String]
