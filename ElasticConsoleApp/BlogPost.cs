@@ -10,11 +10,13 @@ namespace ElasticConsoleApp
     [ElasticsearchType(IdProperty = "Id", Name = "blog_post")]
     public class BlogPost
     {
-        
+        [String]
         public Guid? Id { get; set; }
 
+        [String]
         public string Title { get; set; }
 
+        [String]
         public string Body { get; set; }
 
         public override string ToString()
