@@ -28,6 +28,11 @@ namespace ElasticConsoleApp
                     )
                 );
 
+            if (!client.IndexExists("index-claus").Exists)
+            {
+                var createIndex = client.CreateIndex("index-claus");
+            }
+
             //Creates a blogpost
             var blogPost = new BlogPost
             {
@@ -41,7 +46,8 @@ namespace ElasticConsoleApp
             //Indexes the blogpost in the index
             var res = client.Index(blogPost, p => p
                 .Index("index-claus")
-                .Id(blogPost.Id.ToString())
+                .Type("blogpost")
+                .Id(1)
                 .Refresh());
 
             Console.WriteLine(res.CallDetails);

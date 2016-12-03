@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Nest;
 
-namespace ElasticConsoleApp
+namespace Model
 {
     [ElasticsearchType(IdProperty = "Id", Name = "blog_post")]
     public class BlogPost
