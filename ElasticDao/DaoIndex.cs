@@ -10,14 +10,20 @@ namespace ElasticDao
 {
     public class DaoIndex
     {
+        private readonly Uri node;
+        private readonly ConnectionSettings connectionSettings;
+        private readonly ElasticClient client;
+
+        public DaoIndex()
+        {
+            node = new Uri("http://localhost:9200");
+            connectionSettings = new ConnectionSettings(node);
+            client = new ElasticClient(connectionSettings);
+        }
 
         public int CreateIndex(string name)
         {
             int rc = -1;
-
-            var node = new Uri("http://localhost:9200");
-            var connection = new ConnectionSettings(node);
-            var client = new ElasticClient(connection);
 
             if (!client.IndexExists(name).Exists)
             {
@@ -32,6 +38,7 @@ namespace ElasticDao
                             )
                         )
                  );
+                rc = 0;
             }
 
             return rc;
@@ -41,14 +48,20 @@ namespace ElasticDao
         {
             int rc = -1;
 
-            var node = new Uri("http://localhost:9200");
-            var connection = new ConnectionSettings(node);
-            var client = new ElasticClient(connection);
-
             if (client.IndexExists(name).Exists)
             {
                 var deleteIndex = client.DeleteIndex(name);
+                rc = 0;
             }
+
+            return rc;
+        }
+
+        public int CreateNode()
+        {
+            int rc = -1;
+
+
 
             return rc;
         }

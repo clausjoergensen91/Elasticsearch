@@ -37,5 +37,15 @@ namespace UI
         {
             this.Close();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //System.Diagnostics.Process.Start("C:\\elk\\es\\bin\\elasticsearch");
+
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            process.StartInfo.FileName = "C:\\elk\\es\\bin\\elasticsearch";
+            process.StartInfo.WorkingDirectory = "C:\\elk\\es\\bin";
+            process.Start();
+        }
     }
 }
