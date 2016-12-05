@@ -51,9 +51,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ElasticDao\ElasticDao.csproj">
+    <ProjectReference Include="..\ElasticDao\ElasticAccess.csproj">
       <Project>{87c047bd-1fc6-4d70-8190-c4e8dd709b2f}</Project>
-      <Name>ElasticDao</Name>
+      <Name>ElasticAccess</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

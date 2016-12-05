@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controller", "Controller\Controller.csproj", "{948DBB00-94F0-46D6-9D93-EF1EC158C4B2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElasticDao", "ElasticDao\ElasticDao.csproj", "{87C047BD-1FC6-4D70-8190-C4E8DD709B2F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElasticAccess", "ElasticDao\ElasticAccess.csproj", "{87C047BD-1FC6-4D70-8190-C4E8DD709B2F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI", "UI\UI.csproj", "{5D1439E3-E714-4497-9AEB-F8E9B6394489}"
 EndProject

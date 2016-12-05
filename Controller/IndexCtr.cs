@@ -9,21 +9,21 @@ namespace Controller
 {
     public class IndexCtr
     {
-        DaoIndex daoIndex;
+        ElasticDao.ElasticDao elasticDao;
 
         public IndexCtr()
         {
-            daoIndex = new DaoIndex();
+            elasticDao = new ElasticDao.ElasticDao();
         }
 
         public int CreateIndex(string name)
         {
-            return daoIndex.CreateIndex(name);
+            return elasticDao.CreateIndex(name);
         }
 
         public int DeleteIndex(string name)
         {
-            return daoIndex.DeleteIndex(name);
+            return elasticDao.DeleteIndex(name);
         }
     }
 }

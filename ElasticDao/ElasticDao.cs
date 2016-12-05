@@ -8,17 +8,19 @@ using Model;
 
 namespace ElasticDao
 {
-    public class DaoIndex
+    public class ElasticDao
     {
         private readonly Uri node;
         private readonly ConnectionSettings connectionSettings;
         private readonly ElasticClient client;
 
-        public DaoIndex()
+        public ElasticDao()
         {
             node = new Uri("http://localhost:9200");
             connectionSettings = new ConnectionSettings(node);
             client = new ElasticClient(connectionSettings);
+            client.ClusterHealth(ch => ch
+                .Local());
         }
 
         public int CreateIndex(string name)
