@@ -11,7 +11,7 @@ namespace Model
     public class BlogPost
     {
         [String]
-        public Guid? Id { get; set; }
+        public string Id { get; set; }
 
         [String]
         public string Title { get; set; }

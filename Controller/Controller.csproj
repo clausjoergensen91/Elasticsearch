@@ -55,6 +55,10 @@
       <Project>{87c047bd-1fc6-4d70-8190-c4e8dd709b2f}</Project>
       <Name>ElasticAccess</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{6dbf78a6-4608-4b72-ad5b-00559a6c67bb}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

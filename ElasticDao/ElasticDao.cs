@@ -13,6 +13,7 @@ namespace ElasticDao
         private readonly Uri node;
         private readonly ConnectionSettings connectionSettings;
         private readonly ElasticClient client;
+        private BlogPost blogPost;
 
         public ElasticDao()
         {
@@ -59,10 +60,18 @@ namespace ElasticDao
             return rc;
         }
 
-        public int CreateNode()
+        public int PostDocument(string name, Guid id, string title, string text)
         {
             int rc = -1;
 
+            if (client.IndexExists(name).Exists)
+            {
+                client.Index(blogPost, i => i
+                    .Index("claus")
+                    .Id(blogPost.Id.ToString())
+                    .Refresh());
+                rc = 0;
+            }
 
 
             return rc;

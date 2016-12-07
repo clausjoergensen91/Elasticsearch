@@ -8,17 +8,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Controller;
+using Model;
 
 namespace UI
 {
     public partial class Form1 : Form
     {
         IndexCtr indexCtr;
+        BlogPost blogPost;
 
         public Form1()
         {
             InitializeComponent();
             indexCtr = new IndexCtr();
+            blogPost = new BlogPost();
         }
 
         private void CreateIndexBtn_click(object sender, EventArgs e)
@@ -46,6 +49,16 @@ namespace UI
             process.StartInfo.FileName = "C:\\elk\\es\\bin\\elasticsearch";
             process.StartInfo.WorkingDirectory = "C:\\elk\\es\\bin";
             process.Start();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void postBtn_Click(object sender, EventArgs e)
+        {
+            indexCtr.PostDocument(textBoxIndex.Text, Guid.NewGuid(), textBoxTitle.Text, textBoxText.Text);
         }
     }
 }

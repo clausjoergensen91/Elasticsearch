@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ElasticDao;
+using Model;
 
 namespace Controller
 {
@@ -24,6 +25,11 @@ namespace Controller
         public int DeleteIndex(string name)
         {
             return elasticDao.DeleteIndex(name);
+        }
+
+        public int PostDocument(string name, Guid id, string title, string text)
+        {
+            return elasticDao.PostDocument(name, Guid.NewGuid(), title, text);
         }
     }
 }
