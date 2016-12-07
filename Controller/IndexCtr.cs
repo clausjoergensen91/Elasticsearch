@@ -25,5 +25,10 @@ namespace Controller
         {
             return elasticDao.DeleteIndex(name);
         }
+
+        public int PostBlogPost(string id, string title, string body)
+        {
+            return elasticDao.PostBlogPost(id, title, body);
+        }
     }
 }

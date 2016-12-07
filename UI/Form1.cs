@@ -47,5 +47,13 @@ namespace UI
             process.StartInfo.WorkingDirectory = "C:\\elk\\es\\bin";
             process.Start();
         }
+
+        private void postDocBtn_Click(object sender, EventArgs e)
+        {
+            indexCtr.PostBlogPost(idText.Text, titleBox.Text, bodyTxt.Text);
+            idText.Clear();
+            titleBox.Clear();
+            bodyBox.Clear();
+        }
     }
 }

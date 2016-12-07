@@ -13,6 +13,7 @@ namespace ElasticDao
         private readonly Uri node;
         private readonly ConnectionSettings connectionSettings;
         private readonly ElasticClient client;
+        private BlogPost blogPost;
 
         public ElasticDao()
         {
@@ -55,6 +56,18 @@ namespace ElasticDao
                 var deleteIndex = client.DeleteIndex(name);
                 rc = 0;
             }
+
+            return rc;
+        }
+
+        public int PostBlogPost(string id, string title, string body)
+        {
+            int rc = -1;
+
+            var resGet = client.Index(blogPost, p => p
+                .Index("testindex")
+                .Id(blogPost.Id.ToString())
+                .Refresh());
 
             return rc;
         }
